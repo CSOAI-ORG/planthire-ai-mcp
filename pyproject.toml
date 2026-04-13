@@ -1,16 +1,29 @@
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
 [project]
 name = "planthire-ai-mcp"
 version = "1.0.0"
-description = "MEOK AI Labs — Construction equipment rental MCP Server"
+description = "MEOK AI Labs — Built by MEOK AI Labs | https://planthire.ai"
+authors = [{name="MEOK AI Labs", email="nicholas@meok.ai"}]
 readme = "README.md"
-license = {file = "LICENSE"}
+license = {text = "MIT"}
 requires-python = ">=3.10"
-authors = [{name = "MEOK AI Labs", email = "nicholas@meok.ai"}]
-keywords = ["mcp", "construction", "plant-hire", "equipment", "rental", "meok"]
-dependencies = ["mcp>=1.0.0"]
+keywords = ["mcp", "mcp-server", "model-context-protocol", "claude", "ai-tools", "meok-ai-labs", "plant-hire", "equipment-rental", "construction-equipment", "heavy-machinery"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Intended Audience :: Developers",
+]
+dependencies = [
+    "mcp>=1.0.0",
+]
+
 [project.urls]
-Homepage = "https://planthire.ai"
+Homepage = "https://meok.ai"
 Repository = "https://github.com/CSOAI-ORG/planthire-ai-mcp"
+Documentation = "https://meok.ai/docs/planthire-ai-mcp"
+"Bug Tracker" = "https://github.com/CSOAI-ORG/planthire-ai-mcp/issues"

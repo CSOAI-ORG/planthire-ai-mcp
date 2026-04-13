@@ -1,0 +1,10 @@
+name: planthire-ai-mcp
+description: "MEOK AI Labs — Built by MEOK AI Labs | https://planthire.ai"
+vendor: MEOK AI Labs
+homepage: https://meok.ai
+repository: https://github.com/CSOAI-ORG/planthire-ai-mcp
+license: MIT
+categories: [Construction, Business]
+tags: [plant-hire, equipment-rental, construction-equipment, heavy-machinery]
+runtime: python
+entrypoint: server.py
