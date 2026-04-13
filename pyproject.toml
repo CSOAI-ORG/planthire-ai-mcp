@@ -1,0 +1,16 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+[project]
+name = "planthire-ai-mcp"
+version = "1.0.0"
+description = "MEOK AI Labs — Construction equipment rental MCP Server"
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.10"
+authors = [{name = "MEOK AI Labs", email = "nicholas@meok.ai"}]
+keywords = ["mcp", "construction", "plant-hire", "equipment", "rental", "meok"]
+dependencies = ["mcp>=1.0.0"]
+[project.urls]
+Homepage = "https://planthire.ai"
+Repository = "https://github.com/CSOAI-ORG/planthire-ai-mcp"
