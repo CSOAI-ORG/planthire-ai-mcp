@@ -15,10 +15,7 @@ from typing import Optional
 from mcp.server.fastmcp import FastMCP
 
 mcp = FastMCP(
-    "planthire-ai",
-    version="1.0.0",
-    description="Construction equipment rental AI - search, quote, book, safety checklists",
-)
+    "planthire-ai")
 
 # ---------------------------------------------------------------------------
 # Rate limiting
@@ -501,8 +498,7 @@ def search_equipment(
     max_weight_tonnes: Optional[float] = None,
     min_dig_depth_m: Optional[float] = None,
     max_daily_rate: Optional[float] = None,
-    requires_licence: Optional[bool] = None,
-) -> dict:
+    requires_licence: Optional[bool] = None) -> dict:
     """Search the construction equipment catalog.
 
     Filter by category, weight, capabilities, and price. Categories include:
@@ -573,8 +569,7 @@ def get_rental_quote(
     duration_days: int,
     include_insurance: bool = True,
     include_fuel: bool = False,
-    operator_required: bool = False,
-) -> dict:
+    operator_required: bool = False) -> dict:
     """Calculate rental pricing for equipment.
 
     Applies tiered pricing: daily rate for 1-6 days, weekly rate for 7-27,
@@ -677,8 +672,7 @@ def check_availability(
     equipment_id: str,
     start_date: str,
     end_date: str,
-    depot: str = "london",
-) -> dict:
+    depot: str = "london") -> dict:
     """Check equipment availability for a date range.
 
     Args:
@@ -755,8 +749,7 @@ def create_booking(
     customer_phone: str = "",
     include_insurance: bool = True,
     operator_required: bool = False,
-    delivery_address: Optional[str] = None,
-) -> dict:
+    delivery_address: Optional[str] = None) -> dict:
     """Create an equipment booking.
 
     Args:
@@ -873,8 +866,7 @@ def calculate_transport(
     equipment_id: str,
     distance_miles: float,
     depot: str = "london",
-    return_trip: bool = True,
-) -> dict:
+    return_trip: bool = True) -> dict:
     """Estimate transport costs for equipment delivery/collection.
 
     Pricing based on equipment size/weight class and distance.
