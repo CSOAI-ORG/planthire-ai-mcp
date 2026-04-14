@@ -6,6 +6,11 @@ Intelligent construction equipment search, rental quoting,
 availability checking, booking, safety, and transport costing.
 """
 
+
+import sys, os
+sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
+from auth_middleware import check_access
+
 import math
 import time
 import uuid
@@ -498,7 +503,7 @@ def search_equipment(
     max_weight_tonnes: Optional[float] = None,
     min_dig_depth_m: Optional[float] = None,
     max_daily_rate: Optional[float] = None,
-    requires_licence: Optional[bool] = None) -> dict:
+    requires_licence: Optional[bool] = None, api_key: str = "") -> dict:
     """Search the construction equipment catalog.
 
     Filter by category, weight, capabilities, and price. Categories include:
@@ -515,6 +520,10 @@ def search_equipment(
     Returns:
         Matching equipment with specs and rates.
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if not _check_rate_limit():
         return {"error": "Rate limit exceeded. Upgrade to Pro at https://planthire.ai/pricing"}
 
@@ -569,7 +578,7 @@ def get_rental_quote(
     duration_days: int,
     include_insurance: bool = True,
     include_fuel: bool = False,
-    operator_required: bool = False) -> dict:
+    operator_required: bool = False, api_key: str = "") -> dict:
     """Calculate rental pricing for equipment.
 
     Applies tiered pricing: daily rate for 1-6 days, weekly rate for 7-27,
@@ -585,6 +594,10 @@ def get_rental_quote(
     Returns:
         Detailed pricing breakdown in GBP.
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if not _check_rate_limit():
         return {"error": "Rate limit exceeded."}
 
@@ -672,7 +685,7 @@ def check_availability(
     equipment_id: str,
     start_date: str,
     end_date: str,
-    depot: str = "london") -> dict:
+    depot: str = "london", api_key: str = "") -> dict:
     """Check equipment availability for a date range.
 
     Args:
@@ -684,6 +697,10 @@ def check_availability(
     Returns:
         Availability status and alternative suggestions if unavailable.
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if not _check_rate_limit():
         return {"error": "Rate limit exceeded."}
 
@@ -749,7 +766,7 @@ def create_booking(
     customer_phone: str = "",
     include_insurance: bool = True,
     operator_required: bool = False,
-    delivery_address: Optional[str] = None) -> dict:
+    delivery_address: Optional[str] = None, api_key: str = "") -> dict:
     """Create an equipment booking.
 
     Args:
@@ -767,6 +784,10 @@ def create_booking(
     Returns:
         Booking confirmation with reference number.
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if not _check_rate_limit():
         return {"error": "Rate limit exceeded."}
 
@@ -819,7 +840,7 @@ def create_booking(
 
 
 @mcp.tool()
-def get_safety_checklist(equipment_type: str) -> dict:
+def get_safety_checklist(equipment_type: str, api_key: str = "") -> dict:
     """Get pre-use safety inspection checklist for equipment type.
 
     Based on HSE, CPCS, and IPAF guidelines. Categories: excavators,
@@ -831,6 +852,10 @@ def get_safety_checklist(equipment_type: str) -> dict:
     Returns:
         Detailed checklist with regulatory references.
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if not _check_rate_limit():
         return {"error": "Rate limit exceeded."}
 
@@ -866,7 +891,7 @@ def calculate_transport(
     equipment_id: str,
     distance_miles: float,
     depot: str = "london",
-    return_trip: bool = True) -> dict:
+    return_trip: bool = True, api_key: str = "") -> dict:
     """Estimate transport costs for equipment delivery/collection.
 
     Pricing based on equipment size/weight class and distance.
@@ -880,6 +905,10 @@ def calculate_transport(
     Returns:
         Transport cost estimate with vehicle type.
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if not _check_rate_limit():
         return {"error": "Rate limit exceeded."}
 

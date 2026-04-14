@@ -1,25 +1,180 @@
 {
   "name": "planthire-ai-mcp",
-  "description": "MEOK AI Labs \u2014 Built by MEOK AI Labs | https://planthire.ai",
-  "vendor": "MEOK AI Labs",
-  "homepage": "https://meok.ai",
-  "repository": "https://github.com/CSOAI-ORG/planthire-ai-mcp",
-  "runtime": "python",
-  "entrypoint": "server.py",
+  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Sovereign AI tools for everyone.",
+  "version": "1.0.0",
   "tools": [
-    "search_equipment",
-    "get_rental_quote",
-    "check_availability",
-    "create_booking",
-    "get_safety_checklist",
-    "calculate_transport"
-  ],
-  "categories": [
-    "Construction",
-    "Business"
-  ],
-  "pricing": {
-    "free": "50 calls/day",
-    "pro": "$9/mo"
-  }
+    {
+      "name": "search_equipment",
+      "description": "Search the construction equipment catalog.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "nullable": true
+          },
+          "category": {
+            "type": "string",
+            "nullable": true
+          },
+          "max_weight_tonnes": {
+            "type": "number",
+            "nullable": true
+          },
+          "min_dig_depth_m": {
+            "type": "number",
+            "nullable": true
+          },
+          "max_daily_rate": {
+            "type": "number",
+            "nullable": true
+          },
+          "requires_licence": {
+            "type": "boolean",
+            "nullable": true
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "get_rental_quote",
+      "description": "Calculate rental pricing for equipment.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "equipment_id": {
+            "type": "string"
+          },
+          "duration_days": {
+            "type": "integer"
+          },
+          "include_insurance": {
+            "type": "boolean"
+          },
+          "include_fuel": {
+            "type": "boolean"
+          },
+          "operator_required": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "equipment_id",
+          "duration_days"
+        ]
+      }
+    },
+    {
+      "name": "check_availability",
+      "description": "Check equipment availability for a date range.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "equipment_id": {
+            "type": "string"
+          },
+          "start_date": {
+            "type": "string"
+          },
+          "end_date": {
+            "type": "string"
+          },
+          "depot": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "equipment_id",
+          "start_date",
+          "end_date"
+        ]
+      }
+    },
+    {
+      "name": "create_booking",
+      "description": "Create an equipment booking.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "equipment_id": {
+            "type": "string"
+          },
+          "start_date": {
+            "type": "string"
+          },
+          "end_date": {
+            "type": "string"
+          },
+          "depot": {
+            "type": "string"
+          },
+          "customer_name": {
+            "type": "string"
+          },
+          "customer_email": {
+            "type": "string"
+          },
+          "customer_phone": {
+            "type": "string"
+          },
+          "include_insurance": {
+            "type": "boolean"
+          },
+          "operator_required": {
+            "type": "boolean"
+          },
+          "delivery_address": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "required": [
+          "equipment_id",
+          "start_date",
+          "end_date"
+        ]
+      }
+    },
+    {
+      "name": "get_safety_checklist",
+      "description": "Get pre-use safety inspection checklist for equipment type.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "equipment_type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "equipment_type"
+        ]
+      }
+    },
+    {
+      "name": "calculate_transport",
+      "description": "Estimate transport costs for equipment delivery/collection.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "equipment_id": {
+            "type": "string"
+          },
+          "distance_miles": {
+            "type": "number"
+          },
+          "depot": {
+            "type": "string"
+          },
+          "return_trip": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "equipment_id",
+          "distance_miles"
+        ]
+      }
+    }
+  ]
 }

@@ -1,10 +1,113 @@
 name: planthire-ai-mcp
-description: "MEOK AI Labs — Built by MEOK AI Labs | https://planthire.ai"
-vendor: MEOK AI Labs
-homepage: https://meok.ai
-repository: https://github.com/CSOAI-ORG/planthire-ai-mcp
-license: MIT
-categories: [Construction, Business]
-tags: [plant-hire, equipment-rental, construction-equipment, heavy-machinery]
-runtime: python
-entrypoint: server.py
+description: "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Sovereign AI tools for\
+  \ everyone."
+version: 1.0.0
+tools:
+- name: search_equipment
+  description: Search the construction equipment catalog.
+  parameters:
+  - name: query
+    type: string
+    required: false
+  - name: category
+    type: string
+    required: false
+  - name: max_weight_tonnes
+    type: number
+    required: false
+  - name: min_dig_depth_m
+    type: number
+    required: false
+  - name: max_daily_rate
+    type: number
+    required: false
+  - name: requires_licence
+    type: boolean
+    required: false
+- name: get_rental_quote
+  description: Calculate rental pricing for equipment.
+  parameters:
+  - name: equipment_id
+    type: string
+    required: true
+  - name: duration_days
+    type: integer
+    required: true
+  - name: include_insurance
+    type: boolean
+    required: false
+  - name: include_fuel
+    type: boolean
+    required: false
+  - name: operator_required
+    type: boolean
+    required: false
+- name: check_availability
+  description: Check equipment availability for a date range.
+  parameters:
+  - name: equipment_id
+    type: string
+    required: true
+  - name: start_date
+    type: string
+    required: true
+  - name: end_date
+    type: string
+    required: true
+  - name: depot
+    type: string
+    required: false
+- name: create_booking
+  description: Create an equipment booking.
+  parameters:
+  - name: equipment_id
+    type: string
+    required: true
+  - name: start_date
+    type: string
+    required: true
+  - name: end_date
+    type: string
+    required: true
+  - name: depot
+    type: string
+    required: false
+  - name: customer_name
+    type: string
+    required: false
+  - name: customer_email
+    type: string
+    required: false
+  - name: customer_phone
+    type: string
+    required: false
+  - name: include_insurance
+    type: boolean
+    required: false
+  - name: operator_required
+    type: boolean
+    required: false
+  - name: delivery_address
+    type: string
+    required: false
+- name: get_safety_checklist
+  description: Get pre-use safety inspection checklist for equipment type.
+  parameters:
+  - name: equipment_type
+    type: string
+    required: true
+- name: calculate_transport
+  description: Estimate transport costs for equipment delivery/collection.
+  parameters:
+  - name: equipment_id
+    type: string
+    required: true
+  - name: distance_miles
+    type: number
+    required: true
+  - name: depot
+    type: string
+    required: false
+  - name: return_trip
+    type: boolean
+    required: false
