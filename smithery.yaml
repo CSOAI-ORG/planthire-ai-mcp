@@ -1,5 +1,6 @@
 name: planthire-ai-mcp
-description: "\x01"
+description: AI-powered planthire ai MCP server for agents. Supports search equipment,
+  get rental quote, check availability. By MEOK AI Labs.
 version: 1.0.0
 tools:
 - name: search_equipment

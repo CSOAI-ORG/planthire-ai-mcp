@@ -1,6 +1,6 @@
 {
   "name": "planthire-ai-mcp",
-  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 \u0001",
+  "description": "AI-powered planthire ai MCP server for agents. Supports search equipment, get rental quote, check availability. By MEOK AI Labs.",
   "version": "1.0.0",
   "tools": [
     {
