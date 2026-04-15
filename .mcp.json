@@ -10,28 +10,22 @@
         "type": "object",
         "properties": {
           "query": {
-            "type": "string",
-            "nullable": true
+            "type": "string"
           },
           "category": {
-            "type": "string",
-            "nullable": true
+            "type": "string"
           },
           "max_weight_tonnes": {
-            "type": "number",
-            "nullable": true
+            "type": "number"
           },
           "min_dig_depth_m": {
-            "type": "number",
-            "nullable": true
+            "type": "number"
           },
           "max_daily_rate": {
-            "type": "number",
-            "nullable": true
+            "type": "number"
           },
           "requires_licence": {
-            "type": "boolean",
-            "nullable": true
+            "type": "boolean"
           }
         },
         "required": []
@@ -125,8 +119,7 @@
             "type": "boolean"
           },
           "delivery_address": {
-            "type": "string",
-            "nullable": true
+            "type": "string"
           }
         },
         "required": [
