@@ -1,0 +1,60 @@
+{
+  "name": "planthire-ai",
+  "description": "\u0001",
+  "version": "1.0.0",
+  "protocol_version": "2025-11-25",
+  "publisher": {
+    "name": "MEOK AI Labs",
+    "url": "https://meok.ai",
+    "email": "nicholas@meok.ai"
+  },
+  "repository": "https://github.com/CSOAI-ORG/planthire-ai-mcp",
+  "license": "MIT",
+  "transport": [
+    "stdio",
+    "streamable-http"
+  ],
+  "authentication": {
+    "type": "api-key",
+    "free_tier": true,
+    "free_limit": "15 calls/day"
+  },
+  "tools": [
+    {
+      "name": "search_equipment",
+      "description": "Search the construction equipment catalog."
+    },
+    {
+      "name": "get_rental_quote",
+      "description": "Calculate rental pricing for equipment."
+    },
+    {
+      "name": "check_availability",
+      "description": "Check equipment availability for a date range."
+    },
+    {
+      "name": "create_booking",
+      "description": "Create an equipment booking."
+    },
+    {
+      "name": "get_safety_checklist",
+      "description": "Get pre-use safety inspection checklist for equipment type."
+    },
+    {
+      "name": "calculate_transport",
+      "description": "Estimate transport costs for equipment delivery/collection."
+    }
+  ],
+  "categories": [
+    "AI & Machine Learning"
+  ],
+  "pricing": {
+    "free": {
+      "calls_per_day": 15
+    },
+    "pro": {
+      "price": "$29/month",
+      "url": "https://meok.ai/pricing"
+    }
+  }
+}
