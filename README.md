@@ -1,3 +1,5 @@
+[![planthire-ai-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/planthire-ai-mcp/badges/card.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/planthire-ai-mcp)
+
 <div align="center">
 
 [![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/planthire-ai-mcp)](https://github.com/CSOAI-ORG/planthire-ai-mcp/stargazers)
