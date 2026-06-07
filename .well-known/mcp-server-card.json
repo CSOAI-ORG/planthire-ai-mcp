@@ -1,0 +1,31 @@
+{
+  "name": "planthire-ai-mcp",
+  "title": "Planthire Ai Mcp",
+  "description": "AI-powered planthire ai MCP server for agents. Supports search equipment, get rental quote, check availability. By MEOK AI Labs.",
+  "version": "1.0.6",
+  "homepage": "https://meok.ai",
+  "license": "MIT",
+  "transport": {
+    "type": "stdio"
+  },
+  "tools": [
+    {
+      "name": "search_equipment"
+    },
+    {
+      "name": "get_rental_quote"
+    },
+    {
+      "name": "check_availability"
+    },
+    {
+      "name": "create_booking"
+    },
+    {
+      "name": "get_safety_checklist"
+    },
+    {
+      "name": "calculate_transport"
+    }
+  ]
+}

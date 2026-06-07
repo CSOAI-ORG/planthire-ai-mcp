@@ -8,7 +8,6 @@ availability checking, booking, safety, and transport costing.
 
 
 import sys, os
-sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
 from auth_middleware import check_access
 
 import math
@@ -550,7 +549,7 @@ def search_equipment(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
 
     if not _check_rate_limit():
         return {"error": "Rate limit exceeded. Upgrade to Pro at https://planthire.ai/pricing"}
@@ -653,7 +652,7 @@ def get_rental_quote(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
 
     if not _check_rate_limit():
         return {"error": "Rate limit exceeded."}
@@ -785,7 +784,7 @@ def check_availability(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
 
     if not _check_rate_limit():
         return {"error": "Rate limit exceeded."}
@@ -900,7 +899,7 @@ def create_booking(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
 
     if not _check_rate_limit():
         return {"error": "Rate limit exceeded."}
@@ -997,7 +996,7 @@ def get_safety_checklist(equipment_type: str, api_key: str = "") -> dict:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
 
     if not _check_rate_limit():
         return {"error": "Rate limit exceeded."}
@@ -1079,7 +1078,7 @@ def calculate_transport(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
 
     if not _check_rate_limit():
         return {"error": "Rate limit exceeded."}
@@ -1132,5 +1131,8 @@ def calculate_transport(
     }
 
 
-if __name__ == "__main__":
+def main():
     mcp.run()
+
+if __name__ == '__main__':
+    main()

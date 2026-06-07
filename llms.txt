@@ -1,33 +1,39 @@
-# Planthire Ai MCP
-
-> planthire-ai-mcp MCP — AI-powered automation tool
-
-`planthire-ai-mcp` is a Model Context Protocol (MCP) server by MEOK AI Labs.
+# planthire-ai-mcp
+# **PlantHire.AI MCP Server - Construction Equipment AI**
 
 ## Install
-
 ```bash
 pip install planthire-ai-mcp
 ```
 
-Or run without installing:
-
-```bash
-uvx planthire-ai-mcp
-```
+## Auth & Rate Limits
+- Free tier: 10 calls/day. No API key required.
+- Pro tier (£79/mo): unlimited + signed attestations.
+- Enterprise (£1,499/mo): white-label.
 
 ## Tools
 
-- `search_equipment` — Search the construction equipment catalog.
-- `get_rental_quote` — Calculate rental pricing for equipment.
-- `check_availability` — Check equipment availability for a date range.
-- `create_booking` — Create an equipment booking.
-- `get_safety_checklist` — Get pre-use safety inspection checklist for equipment type.
-- `calculate_transport` — Estimate transport costs for equipment delivery/collection.
+### `search_equipment`
+Search the construction equipment catalog.
 
-## Links
+### `get_rental_quote`
+Calculate rental pricing for equipment.
 
-- Source: https://github.com/CSOAI-ORG/planthire-ai-mcp
-- PyPI: https://pypi.org/project/planthire-ai-mcp/
-- MEOK AI Labs: https://meok.ai
-- Council of AI: https://councilof.ai
+### `check_availability`
+Check equipment availability for a date range.
+
+### `create_booking`
+Create an equipment booking.
+
+### `get_safety_checklist`
+Get pre-use safety inspection checklist for equipment type.
+
+### `calculate_transport`
+Estimate transport costs for equipment delivery/collection.
+
+
+## Maintainer
+MEOK AI Labs · hello@meok.ai · https://meok.ai · MIT licensed
+
+## Pairs with
+Governance moat: pair this tool with any of MEOK's 38 governance MCPs (EU AI Act, DORA, NIS2, CRA, GDPR, ISO 42001, etc.) for full compliance coverage.
