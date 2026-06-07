@@ -1,0 +1,77 @@
+{
+  "name": "planthire-ai-mcp",
+  "description": "Planthire Ai MCP Server by MEOK AI Labs",
+  "url": "https://proofof.ai/scorecard/planthire-ai-mcp.html",
+  "version": "1.0.6",
+  "protocolVersion": "0.2.0",
+  "provider": {
+    "organization": "MEOK AI Labs",
+    "url": "https://meok.ai"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "skills": [
+    {
+      "id": "search_equipment",
+      "name": "Search Equipment",
+      "description": "search_equipment via planthire-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "get_rental_quote",
+      "name": "Get Rental Quote",
+      "description": "get_rental_quote via planthire-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "check_availability",
+      "name": "Check Availability",
+      "description": "check_availability via planthire-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "create_booking",
+      "name": "Create Booking",
+      "description": "create_booking via planthire-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "get_safety_checklist",
+      "name": "Get Safety Checklist",
+      "description": "get_safety_checklist via planthire-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "calculate_transport",
+      "name": "Calculate Transport",
+      "description": "calculate_transport via planthire-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    }
+  ]
+}

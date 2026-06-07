@@ -1,0 +1,24 @@
+{
+  "acpVersion": "0.1",
+  "agent": {
+    "name": "planthire-ai-mcp",
+    "description": "Planthire Ai MCP Server by MEOK AI Labs",
+    "version": "1.0.6",
+    "provider": "MEOK AI Labs",
+    "interfaces": [
+      {
+        "type": "mcp",
+        "transport": "stdio",
+        "package": "planthire-ai-mcp"
+      }
+    ],
+    "capabilities": [
+      "search_equipment",
+      "get_rental_quote",
+      "check_availability",
+      "create_booking",
+      "get_safety_checklist",
+      "calculate_transport"
+    ]
+  }
+}
