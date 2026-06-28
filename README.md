@@ -159,3 +159,5 @@ Once configured, ask your assistant, for example:
 - "Use `search_equipment` to …"
 - "Use `get_rental_quote` to …"
 - "Use `check_availability` to …"
+
+<!-- mcp-name: io.github.CSOAI-ORG/planthire-ai-mcp -->
