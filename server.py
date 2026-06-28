@@ -13,6 +13,7 @@ import sys, os
 from auth_middleware import check_access
 
 import math
+import re
 import time
 import uuid
 from datetime import datetime, timedelta, timezone
@@ -1196,6 +1197,12 @@ def meok_upsell(tier: str = "free") -> dict:
             "pricing": MEOK_PRICING}
 
 
+def _validate_postcode_simple(postcode: str) -> bool:
+    """Simple UK postcode validation (loose)."""
+    import re as _re
+    return bool(_re.match(r"^[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}$", postcode.strip(), _re.IGNORECASE))
+
+
 # ---------------------------------------------------------------------------
 # HIGH-LEVEL AGENT-CALLABLE TOOL (Kimi synthesis Phase 5 wedge)
 # ---------------------------------------------------------------------------
@@ -1240,7 +1247,7 @@ def rent_equipment(
     """
     if not _check_rate_limit():
         return {"status": "rejected", "reason": "rate_limit"}
-    if not _validate_postcode(postcode):
+    if not _validate_postcode_simple(postcode):
         return {"status": "rejected", "reason": "invalid_postcode"}
     if hire_days < 1:
         return {"status": "rejected", "reason": "invalid_hire_days",
